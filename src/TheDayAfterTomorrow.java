@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class TheDayAfterTomorrow {
     public static void main (String[] args){
+        // первая функция проверяет високосность года, вторая функция возвращает кол-во дней указанных в месяце
         int year = 2018;
         int month = 2; //Отсчет начинается с нуля (т.е. декабрь это 11 месяц) Поэтому вычитаем 1 день
         int day = 30;
