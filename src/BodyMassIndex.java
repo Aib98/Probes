@@ -3,6 +3,7 @@ import java.math.RoundingMode;
 import java.util.Scanner;
 
 public class BodyMassIndex {
+
     public static void main(String[] args) {
 //        double weight; //кг
 //        double height; //см
