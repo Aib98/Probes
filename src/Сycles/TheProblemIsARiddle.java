@@ -10,29 +10,30 @@ package Сycles;
 import java.util.Scanner;
 
 public class TheProblemIsARiddle {
-    public static void main(String[] args) {
+    static void ridlle(String right, String iGiveUp) {
         int i = 0;
-        String right = new String("Троллейбус");
-        String iGiveUp = new String("Сдаюсь");
-
-
-        System.out.println("Что это такое: синий, большой, с усами и полностью набит зайцами?");
-        System.out.println("Если не знаете напишите - Сдаюсь.");
-
+        Scanner scanner = new Scanner(System.in);
         while (i <= 2) {
-            Scanner scanner = new Scanner(System.in);
             String answer = scanner.next();
             if (answer.equalsIgnoreCase(right)) {
                 System.out.println("Правильно!");
                 i = 3;
             } else if (answer.equalsIgnoreCase(iGiveUp)) {
                 i = 3;
-                System.out.println("Правильный ответ: троллейбус.");
+                System.out.println("Правильный ответ: " + right);
             } else System.out.println("Подумай еще.");
             i++;
-
-
         }
+    }
+
+    public static void main(String[] args) {
+
+        String right = "Троллейбус";
+        String iGiveUp = new String("Сдаюсь");
+
+        System.out.println("Что это такое: синий, большой, с усами и полностью набит зайцами?");
+        System.out.println("Если не знаете напишите - Сдаюсь.");
+        ridlle(right, iGiveUp);
     }
 
 }
