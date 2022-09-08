@@ -1,19 +1,19 @@
 package Сycles;
+
 import java.util.Scanner;
+
 public class DividingANumber {
     static void pluse(int totalPluse, String numberOfDivisors) {
         for (int j = 1; j <= totalPluse; j++) {
             System.out.print(numberOfDivisors);
         }
+        System.out.println();
     }
+
     static int totalAdvantages(int n) {
         int totalPluse = 0;
-        int totalDivisors;
         for (int i = 1; i <= n; i++) {
-            double sum = 1.0 * (n) / (i);
-            totalDivisors = (int) sum;
-//            System.out.println(totalDivisors+" Вычисления "+sum+" Вводимое число: " + n + " Порядковый номер: " + i);
-            if (sum - totalDivisors == 0) {
+            if (n % i == 0) {
                 totalPluse++;
             }
         }
@@ -25,10 +25,9 @@ public class DividingANumber {
         String numberOfDivisors = "+"; // графическое определение делителей
         Scanner scanner = new Scanner(System.in);
         n = scanner.nextInt();
-        System.out.print(n);
-        for (int i = 0; i <= n; i++) {
-            System.out.println(i);
-            pluse(totalAdvantages(i +1), numberOfDivisors);
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i);
+            pluse(totalAdvantages(i), numberOfDivisors);
         }
     }
 }

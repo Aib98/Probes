@@ -1,4 +1,6 @@
 package Сycles;
+// реализоватть игру камень ножницы бумага.
+// В начале игры задает кол-во игр в конце выводим итог
 
 import java.util.Random;
 import java.util.Scanner;
@@ -33,7 +35,7 @@ public class GameRockPaperScissors {
         Random random = new Random();
         System.out.println("Какое кол-во игр вы хотели бы сыграть?");
         int n; // кол-во игр
-        n = scanner.nextInt() - 1;
+        n = scanner.nextInt();
 
         int computer;
         int player;
@@ -46,20 +48,18 @@ public class GameRockPaperScissors {
             player = inputPlayer();
             computer = random.nextInt(3) + 1;
             if (player == computer) {
-                quanitiGame++;
                 System.out.println("Ничья " + quanitiGame);
 
             } else if ((player == 1 && computer == 2) || (player == 2 && computer == 3) || (player == 3 && computer == 1)) {
                 System.out.println("Игрок победил " + quanitiGame);
-                quanitiGame++;
                 victory++;
             } else {
                 System.out.println("Победил компьютер " + quanitiGame);
-                quanitiGame++;
                 wrongGame++;
             }
-        } while (quanitiGame <= n);
-        System.out.println("кол-во игр " + quanitiGame + " Заданное кол-во игр " + (n + 1) + " кол-во побед: " + victory);
+            quanitiGame++;
+        } while (quanitiGame < n);
+        System.out.println("кол-во игр " + quanitiGame + " Заданное кол-во игр " + (n) + " кол-во побед: " + victory);
         winner(victory, wrongGame);
     }
 }
